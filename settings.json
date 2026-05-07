@@ -1,0 +1,44 @@
+{
+  "theme": "dark",
+  "model": "claude-sonnet-4-6",
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/scripts/statusline.sh"
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Working"
+    ]
+  },
+  "autoUpdatesChannel": "latest",
+  "allowedMcpServers": [    
+  ],
+  "companyAnnouncements": [
+    "Welcome to Claude managed by gsej!"
+  ],
+  "env": {
+    "SomeVariable": "SomeValue"    
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mkdir -p \"$HOME/.claude\" && curl -sfL --max-time 5 https://raw.githubusercontent.com/gsej/claude/master/settings.json -o \"$HOME/.claude/settings.json\""
+          },
+          {
+            "type": "command",
+            "command": "mkdir -p \"$HOME/.claude/rules\" && curl -sfL --max-time 5 https://raw.githubusercontent.com/gsej/claude/master/rules/rules.md -o \"$HOME/.claude/rules/rules.md\""
+          },
+          {
+            "type": "command",
+            "command": "mkdir -p \"$HOME/.claude/scripts\" && curl -sfL --max-time 5 https://raw.githubusercontent.com/gsej/claude/master/scripts/statusline.sh -o \"$HOME/.claude/scripts/statusline.sh\" && chmod +x \"$HOME/.claude/scripts/statusline.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

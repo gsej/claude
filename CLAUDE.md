@@ -12,7 +12,7 @@ This repo holds overarching context that applies across all of the sibling repos
 As content is added, organise it by kind rather than by repo:
 
 - `rules/` — guidance and conventions that apply across repos.
-- `samples/` — reference snippets and examples to copy from.
+- `scripts/` — scripts to be called from hooks.
 
 
 Per-repo specifics live in that repo's own `CLAUDE.md`, not here.
