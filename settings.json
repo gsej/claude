@@ -18,7 +18,7 @@
     "Welcome to Claude managed by gsej!"
   ],
   "env": {
-    "SomeVariable": "SomeValue"    
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
   },
   "hooks": {
     "SessionStart": [
